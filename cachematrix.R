@@ -1,5 +1,15 @@
 #Author : Hitesh Dave
 # R Programming Assignment
+# Function to create a special 'matrix' object. 
+# -  x is set to the matrix object created
+# -  invMatrix - stores the inverse of the matrix X.
+# -  Function defines four methods for getters/setters for the two local variables X, invMatrix
+# -  a list of these four methods is returned to the caller.
+#Usage: a <- makeCacheMatrix(rep(1,6),2,3)
+# 	a$set(matrix(1:6, 2, 3)) , set a matrix in a
+#	m <- a$get(), returns the stored matrix
+#	im <- a$getInverse(), returns the stored inverse of the matrix
+#	a$setInverse(matrix), sets the matrix to the  inverse matrix variable
 
 ## Put comments here that give an overall description of what your
 ## functions do
@@ -9,13 +19,11 @@
 
 makeCacheMatrix <- function(x = matrix()) {
 	# Defaul constructor for this object sets the invMatrix to NULL, 
-	#Usage: a <- makeCacheMatrix(rep(1,6),2,3)
 	#x is set in the local env via input parameter
 	invMatrix <- NULL
 	
 	
 	# setter method, sets the input 'y' to the matrix and invMatrix to NULL
-	#usage: m <- makeCacheMatrix$set(matrix(1:6, 2, 3))
 	set <- function (y) {
 		x <<- y
 		invMatrix <<- NULL	
